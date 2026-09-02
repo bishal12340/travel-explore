@@ -52,13 +52,11 @@ const DestinationDetails = () => {
     <div className="min-h-screen pb-20 bg-slate-50">
       {/* Hero Section */}
       <div className="relative h-[60vh] bg-slate-900 overflow-hidden">
-        {heroImage && (
-          <img 
-            src={heroImage} 
-            alt={destination.name} 
-            className="w-full h-full object-cover opacity-70"
-          />
-        )}
+        <img 
+          src={heroImage || destination.imageUrl} 
+          alt={destination.name} 
+          className="w-full h-full object-cover opacity-70"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
         
         <div className="absolute top-24 left-4 sm:left-8">

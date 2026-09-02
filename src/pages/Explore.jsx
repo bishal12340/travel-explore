@@ -116,7 +116,7 @@ const Explore = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <DestinationCard destination={dest} image={destinationImages[dest.id]} />
+                <DestinationCard destination={dest} image={destinationImages[dest.id] || dest.imageUrl} />
               </motion.div>
             ))}
           </div>

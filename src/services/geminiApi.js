@@ -38,7 +38,9 @@ export const generateItinerary = async (destination, days, style) => {
     });
 
     if (!response.ok) {
-      throw new Error('Gemini API fetch failed');
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Gemini API error details:', errorData);
+      throw new Error(errorData?.error?.message || `API Error: ${response.status}`);
     }
 
     const data = await response.json();
@@ -55,7 +57,8 @@ export const generateItinerary = async (destination, days, style) => {
     return JSON.parse(cleanJson);
   } catch (error) {
     console.error('Error generating itinerary:', error);
-    throw new Error('Failed to generate itinerary. Please try again.');
+    // Pass the actual error message to the UI
+    throw new Error(error.message || 'Failed to generate itinerary. Please try again.');
   }
 };
 

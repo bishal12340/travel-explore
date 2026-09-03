@@ -23,43 +23,52 @@ export const generateItinerary = async (destination, days, style) => {
     }
   `;
 
-  try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.7,
-        }
-      })
-    });
+  const modelsToTry = ['gemini-3.6-flash', 'gemini-pro', 'gemini-2.5-flash'];
+  let lastError = null;
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      console.error('Gemini API error details:', errorData);
-      throw new Error(errorData?.error?.message || `API Error: ${response.status}`);
+  for (const model of modelsToTry) {
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 0.7,
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        lastError = new Error(errorData?.error?.message || `API Error: ${response.status}`);
+        console.warn(`Model ${model} failed:`, lastError.message);
+        continue; // Try the next model
+      }
+
+      const data = await response.json();
+      const textResponse = data.candidates[0].content.parts[0].text;
+      
+      // Clean up potential markdown blocks if Gemini didn't listen
+      let cleanJson = textResponse.trim();
+      if (cleanJson.startsWith('```json')) {
+        cleanJson = cleanJson.replace(/```json/g, '').replace(/```/g, '').trim();
+      } else if (cleanJson.startsWith('```')) {
+        cleanJson = cleanJson.replace(/```/g, '').trim();
+      }
+
+      return JSON.parse(cleanJson);
+    } catch (error) {
+      console.warn(`Error with model ${model}:`, error);
+      lastError = error;
     }
-
-    const data = await response.json();
-    const textResponse = data.candidates[0].content.parts[0].text;
-    
-    // Clean up potential markdown blocks if Gemini didn't listen
-    let cleanJson = textResponse.trim();
-    if (cleanJson.startsWith('```json')) {
-      cleanJson = cleanJson.replace(/```json/g, '').replace(/```/g, '').trim();
-    } else if (cleanJson.startsWith('```')) {
-      cleanJson = cleanJson.replace(/```/g, '').trim();
-    }
-
-    return JSON.parse(cleanJson);
-  } catch (error) {
-    console.error('Error generating itinerary:', error);
-    // Pass the actual error message to the UI
-    throw new Error(error.message || 'Failed to generate itinerary. Please try again.');
   }
+
+  // If all models failed, throw the last error to the UI
+  console.error('All Gemini models failed. Last error:', lastError);
+  throw new Error(lastError?.message || 'Failed to generate itinerary. Please try again.');
 };
 
 const getMockItinerary = (destination, days) => {

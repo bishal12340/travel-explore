@@ -66,12 +66,9 @@ export const generateItinerary = async (destination, days, style) => {
     }
   }
 
-  // If all models failed (e.g. high demand, API down), fallback to the mock data so the app remains permanently workable
+  // If all models failed, throw the actual error to the UI so the user knows what went wrong
   console.error('All Gemini models failed. Last error:', lastError);
-  console.warn('Falling back to local mock itinerary due to API failure.');
-  
-  // Fake a slight delay to simulate processing before returning mock data
-  return new Promise(resolve => setTimeout(() => resolve(getMockItinerary(destination, days)), 1000));
+  throw new Error(lastError?.message || 'Failed to generate itinerary. Please try again.');
 };
 
 const getMockItinerary = (destination, days) => {

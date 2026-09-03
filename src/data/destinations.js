@@ -156,21 +156,21 @@ export const destinations = [
     description: 'Agra is a city on the banks of the Yamuna river in the Indian state of Uttar Pradesh. It is a major tourist destination because of its many Mughal-era buildings.',
     category: 'Historic',
     coordinates: { lat: 27.1767, lon: 78.0081 },
-    imageUrl: 'https://images.unsplash.com/photo-1564507592208-528756952435?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80',
     famousPlaces: [
       {
         id: 'tajmahal',
         name: 'Taj Mahal',
         description: 'An ivory-white marble mausoleum on the right bank of the river Yamuna.',
         type: 'Landmark',
-        imageUrl: 'https://images.unsplash.com/photo-1564507592208-528756952435?auto=format&fit=crop&w=800&q=80'
+        imageUrl: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'agrafort',
         name: 'Agra Fort',
         description: 'A historical fort in the city of Agra in India.',
         type: 'Fort',
-        imageUrl: 'https://images.unsplash.com/photo-1627798305096-7c0066fb6e85?auto=format&fit=crop&w=800&q=80'
+        imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -206,7 +206,7 @@ export const destinations = [
     description: 'The capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.',
     category: 'City',
     coordinates: { lat: 51.5074, lon: -0.1278 },
-    imageUrl: 'https://images.unsplash.com/photo-1513635269975-59693e0cd156?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?auto=format&fit=crop&w=800&q=80',
     famousPlaces: [
       {
         id: 'tower',
@@ -220,7 +220,7 @@ export const destinations = [
         name: 'London Eye',
         description: 'A cantilevered observation wheel on the South Bank of the River Thames.',
         type: 'Landmark',
-        imageUrl: 'https://images.unsplash.com/photo-1513635269975-59693e0cd156?auto=format&fit=crop&w=800&q=80'
+        imageUrl: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80'
       }
     ]
   }

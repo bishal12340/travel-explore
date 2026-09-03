@@ -12,9 +12,8 @@ const fallbackImages = [
 
 export const fetchImage = async (query) => {
   if (!UNSPLASH_API_KEY) {
-    console.warn('Unsplash API key is missing. Using fallback image.');
-    // Return a random fallback image
-    return fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
+    console.warn('Unsplash API key is missing. Falling back to local data.');
+    return null;
   }
 
   try {
@@ -32,9 +31,9 @@ export const fetchImage = async (query) => {
       return data.results[0].urls.regular;
     }
     
-    return fallbackImages[0];
+    return null;
   } catch (error) {
     console.error('Failed to fetch image:', error);
-    return fallbackImages[0];
+    return null;
   }
 };

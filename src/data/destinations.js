@@ -13,14 +13,14 @@ export const destinations = [
         name: 'Eiffel Tower',
         description: 'Wrought-iron lattice tower on the Champ de Mars.',
         type: 'Landmark',
-        imageKeyword: 'eiffel tower'
+        imageUrl: 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'louvre',
         name: 'Louvre Museum',
         description: 'The world\'s largest art museum and a historic monument.',
         type: 'Museum',
-        imageKeyword: 'louvre museum'
+        imageUrl: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -38,14 +38,14 @@ export const destinations = [
         name: 'Kinkaku-ji',
         description: 'A Zen Buddhist temple in Kyoto, famous for its golden pavilion.',
         type: 'Temple',
-        imageKeyword: 'kinkaku-ji kyoto'
+        imageUrl: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'fushimi',
         name: 'Fushimi Inari Taisha',
         description: 'The head shrine of the kami Inari, known for its thousands of vermilion torii gates.',
         type: 'Shrine',
-        imageKeyword: 'fushimi inari kyoto'
+        imageUrl: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -63,14 +63,14 @@ export const destinations = [
         name: 'Ubud Monkey Forest',
         description: 'A nature reserve and Hindu temple complex in Ubud.',
         type: 'Nature',
-        imageKeyword: 'ubud monkey forest'
+        imageUrl: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'uluwatu',
         name: 'Uluwatu Temple',
         description: 'A Balinese Hindu sea temple located in Uluwatu.',
         type: 'Temple',
-        imageKeyword: 'uluwatu temple bali'
+        imageUrl: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -88,14 +88,14 @@ export const destinations = [
         name: 'Colosseum',
         description: 'An oval amphitheatre in the centre of the city of Rome.',
         type: 'Landmark',
-        imageKeyword: 'colosseum rome'
+        imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'vatican',
         name: 'Vatican Museums',
         description: 'Public museums of the Vatican City.',
         type: 'Museum',
-        imageKeyword: 'vatican museums'
+        imageUrl: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -113,14 +113,14 @@ export const destinations = [
         name: 'Oia',
         description: 'A coastal town on the northwestern tip of Santorini.',
         type: 'Town',
-        imageKeyword: 'oia santorini'
+        imageUrl: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5f1?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'akrotiri',
         name: 'Akrotiri',
         description: 'A Minoan Bronze Age settlement on the volcanic Greek island of Santorini.',
         type: 'Ruins',
-        imageKeyword: 'akrotiri santorini'
+        imageUrl: 'https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -138,14 +138,14 @@ export const destinations = [
         name: 'Central Park',
         description: 'An urban park in New York City located between the Upper West and Upper East Sides of Manhattan.',
         type: 'Park',
-        imageKeyword: 'central park'
+        imageUrl: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'statue',
         name: 'Statue of Liberty',
         description: 'A colossal neoclassical sculpture on Liberty Island in New York Harbor.',
         type: 'Landmark',
-        imageKeyword: 'statue of liberty'
+        imageUrl: 'https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -163,14 +163,14 @@ export const destinations = [
         name: 'Taj Mahal',
         description: 'An ivory-white marble mausoleum on the right bank of the river Yamuna.',
         type: 'Landmark',
-        imageKeyword: 'taj mahal'
+        imageUrl: 'https://images.unsplash.com/photo-1564507592208-528756952435?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'agrafort',
         name: 'Agra Fort',
         description: 'A historical fort in the city of Agra in India.',
         type: 'Fort',
-        imageKeyword: 'agra fort'
+        imageUrl: 'https://images.unsplash.com/photo-1627798305096-7c0066fb6e85?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -188,14 +188,14 @@ export const destinations = [
         name: 'Shibuya Crossing',
         description: 'A popular scramble crossing in Shibuya, Tokyo.',
         type: 'Cityscape',
-        imageKeyword: 'shibuya crossing'
+        imageUrl: 'https://images.unsplash.com/photo-1542931287-023b922fa89b?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'skytree',
         name: 'Tokyo Skytree',
         description: 'A broadcasting and observation tower in Sumida, Tokyo.',
         type: 'Landmark',
-        imageKeyword: 'tokyo skytree'
+        imageUrl: 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&fit=crop&w=800&q=80'
       }
     ]
   },
@@ -213,14 +213,14 @@ export const destinations = [
         name: 'Tower of London',
         description: 'Historic castle on the north bank of the River Thames.',
         type: 'Landmark',
-        imageKeyword: 'tower of london'
+        imageUrl: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=800&q=80'
       },
       {
         id: 'londoneye',
         name: 'London Eye',
         description: 'A cantilevered observation wheel on the South Bank of the River Thames.',
         type: 'Landmark',
-        imageKeyword: 'london eye'
+        imageUrl: 'https://images.unsplash.com/photo-1513635269975-59693e0cd156?auto=format&fit=crop&w=800&q=80'
       }
     ]
   }

@@ -29,7 +29,7 @@ const DestinationDetails = () => {
         const images = {};
         await Promise.all(
           destination.famousPlaces.map(async (place) => {
-            const imgUrl = await fetchImage(place.imageKeyword);
+            const imgUrl = await fetchImage(`${place.name} ${destination.name}`);
             images[place.id] = imgUrl;
           })
         );
@@ -95,7 +95,7 @@ const DestinationDetails = () => {
                   <div key={place.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                     <div className="h-48 bg-slate-200">
                       <img 
-                        src={placesImages[place.id] || 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'} 
+                        src={placesImages[place.id] || place.imageUrl} 
                         alt={place.name} 
                         className="w-full h-full object-cover"
                       />

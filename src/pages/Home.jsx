@@ -88,11 +88,11 @@ const Home = () => {
           {/* Mock Grid for Trending */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { id: 1, name: 'Paris, France', img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80' },
-              { id: 2, name: 'Kyoto, Japan', img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80' },
-              { id: 3, name: 'Bali, Indonesia', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80' },
+              { id: 'paris', name: 'Paris, France', img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80' },
+              { id: 'kyoto', name: 'Kyoto, Japan', img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80' },
+              { id: 'bali', name: 'Bali, Indonesia', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80' },
             ].map((dest) => (
-              <div key={dest.id} className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all h-80">
+              <Link to={`/destination/${dest.id}`} key={dest.id} className="block group relative rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all h-80">
                 <img src={dest.img} alt={dest.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 w-full">
@@ -102,7 +102,7 @@ const Home = () => {
                     <ArrowRight className="text-white w-5 h-5" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
